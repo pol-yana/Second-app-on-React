@@ -1,20 +1,25 @@
 import React, { Component } from "react";
-import EditPost from "./EditPost";
+//import EditPost from "./EditPost";
+import List from "./List";
+//import Count from "./Count";
 
-class App extends Component{
+class App extends Component {
   constructor(props) {
     super(props);
-    this.getPostFromEditPost = this.getPostFromEditPost.bind(this);
+    //this.showPostFromEditPost = this.showPostFromEditPost.bind(this);
+    this.nameArticle = "BlaBla";
   }
 
-  getPostFromEditPost(article) {
-    console.log("Parent`s post: ", article)
-  }
+  // showPostFromEditPost(article) {
+  //   console.log("Parent`s post: ", article);
+  //   //this.props.post
+  // }
 
   render() {
     return (
       <div className="App">
-        <EditPost givePostForList={this.getPostFromEditPost} />
+    
+        <List article ={this.nameArticle} />
       </div>
     );
   }

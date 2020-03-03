@@ -7,23 +7,23 @@ class EditPost extends Component {
     this.state = {
       post: "Post"
     };
-    this.edit = this.edit.bind(this);
+    this.editPost = this.editPost.bind(this);
     this.updatePost = this.updatePost.bind(this);
-    this.givePostForList = this.givePostForList.bind(this);
-    this.getPostFromEditPost = this.getPostFromEditPost.bind(this);
+    this.sendPostToList = this.sendPostToList.bind(this);
+    
   }
 
-  givePostForList(){
-    this.props.getPostFromEditPost(this.state.post);
+  sendPostToList() {
+    this.props.postFromEditPost(this.state.post);
   }
 
-  edit(event) {
+  editPost(event) {
     this.setState({
       post: event.target.value
     });
     console.log("Post: ", this.state.post);
-    //this.givePostForList();
-    this.props.getPostFromEditPost(this.state.post);
+    this.sendPostToList();
+    
   }
 
   updatePost(event) {
@@ -43,7 +43,7 @@ class EditPost extends Component {
             type="text"
           />
         </form>
-        <button onClick={this.edit}>Edit</button>
+        <button onClick={this.editPost}>Edit</button>
       </div>
     );
   }
